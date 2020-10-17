@@ -24,7 +24,11 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Aiming")
 	FName FPSCameraSocketName;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Movement")
+	float MaxWalkSpeed;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Movement")
+	float MaxRunSpeed;
 
 public:
 	// Sets default values for this character's properties
@@ -37,6 +41,10 @@ protected:
 	void MoveForward(float value);
 
 	void MoveRight(float value);
+
+	virtual void Running();
+
+	virtual void StopRunning();
 
 	virtual void Jump() override;
 
