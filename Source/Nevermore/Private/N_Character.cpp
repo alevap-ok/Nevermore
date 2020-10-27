@@ -89,3 +89,12 @@ void AN_Character::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 	PlayerInputComponent->BindAction("Run", IE_Released, this, &AN_Character::StopRunning);
 }
 
+void AN_Character::AddKey(FName NewKey)
+{
+	DoorKeys.Add(NewKey);
+}
+
+bool AN_Character::HasKey(FName KeyTag)
+{
+	return DoorKeys.Contains(KeyTag);
+}

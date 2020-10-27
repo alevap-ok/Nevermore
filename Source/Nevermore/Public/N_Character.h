@@ -30,6 +30,10 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Movement")
 	float MaxRunSpeed;
 
+	UPROPERTY(EditAnywhere, Blueprintreadwrite)
+	TArray<FName> DoorKeys;
+
+
 public:
 	// Sets default values for this character's properties
 	AN_Character();
@@ -59,4 +63,7 @@ public:
 
 	virtual void AddControllerPitchInput(float value) override;
 
+	void AddKey(FName NewKey);
+
+	bool HasKey(FName KeyTag);
 };
